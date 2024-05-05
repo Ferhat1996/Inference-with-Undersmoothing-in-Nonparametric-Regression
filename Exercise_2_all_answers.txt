@@ -1,0 +1,112 @@
+
+***************************2_a***************************
+
+**************************h_star*************************
+
+Sample size: 100 
+ h_star: 0.149129451476127 
+ V(x): 0.118014965812524 
+Sample size: 100 
+ Empirical coverage rate of CI: 0.9441 
+ Average value of the rescaled bias: 0.12833064458876 
+
+Sample size: 500 
+ h_star: 0.116134638345886 
+ V(x): 0.169004724799952 
+Sample size: 500 
+ Empirical coverage rate of CI: 0.9561 
+ Average value of the rescaled bias: 0.10448125731698 
+
+Sample size: 5000 
+ h_star: 0.0726672786894607 
+ V(x): 0.162100543209931 
+Sample size: 5000 
+ Empirical coverage rate of CI: 0.9655 
+ Average value of the rescaled bias: 0.0930762859767109 
+
+
+# Print the results as a table
+print(results)
+  Sample_Size Empirical_Coverage_Rate Rescaled_Bias
+1         100                  0.9441    0.12833064
+2         500                  0.9561    0.10448126
+3        5000                  0.9655    0.09307629
+
+***************************2_b***************************
+Empirical Coverage Rate vs. Nominal Level (95%):
+
+1)For a 95% confidence interval (CI), the nominal level is 95%.
+
+	The empirical coverage rates provided are 0.9441, 0.9561, and 0.9655 for sample sizes 100, 500, and 5000, respectively.
+	The empirical coverage rates are close to the nominal level, indicating that the intervals tend to cover the true parameter at a satisfactory rate.
+
+2)Change with Sample Size (n):
+
+	The empirical coverage rate increases with sample size, moving from 0.9441 to 0.9655.
+	This suggests that as the sample size increases, the intervals tend to cover the true parameter more accurately, approaching and exceeding the nominal level.
+
+3)Rescaled Bias vs. Sample Size (n):
+
+	The average values of the rescaled bias are 0.12833064, 0.10448126, and 0.09307629 for sample sizes 100, 500, and 5000, respectively.
+	The rescaled bias decreases as the sample size increases.
+	This indicates that with larger sample sizes, the bias in the estimated intervals tends to decrease.
+
+In conclusion, as anticipated:
+
+The empirical coverage rates are close to the nominal level of 95%.
+The empirical coverage rates improve with larger sample sizes, suggesting better interval performance.
+The rescaled bias decreases with larger sample sizes, indicating improved accuracy in estimating the intervals.
+
+***************************2_c***************************
+
+******h <- n^(-1/20) * h_star  # Modified bandwidth******
+
+Sample size: 100 
+ h_star: 0.149129451476127 
+ h: 0.118457733936433 
+ V(x): 0.113606506780357 
+Sample size: 100 
+ Empirical coverage rate of CI: 0.9578 
+ Average value of the rescaled bias: 0.0799397826374115 
+
+Sample size: 500 
+ h_star: 0.116134638345886 
+ h: 0.0851164048560631 
+ V(x): 0.170696952866406 
+Sample size: 500 
+ Empirical coverage rate of CI: 0.9648 
+ Average value of the rescaled bias: 0.0592531663921706 
+
+Sample size: 5000 
+ h_star: 0.0726672786894607 
+ h: 0.0474668482999686 
+ V(x): 0.166884175432761 
+Sample size: 5000 
+ Empirical coverage rate of CI: 0.9738 
+ Average value of the rescaled bias: 0.0342114796798126 
+
+
+# Print the results as a table
+print(results)
+  Sample_Size Empirical_Coverage_Rate Rescaled_Bias
+1         100                  0.9578    0.07993978
+2         500                  0.9648    0.05925317
+3        5000                  0.9738    0.03421148
+
+
+1)Empirical Coverage Rates:
+
+	The empirical coverage rates with the modified bandwidths are slightly higher than those with the original bandwidths for all sample sizes.
+	The increase in coverage rates suggests that the modified bandwidths lead to intervals that cover the true parameter at a slightly higher rate.
+
+2)Sample Size (n):
+	
+	In same sample size (n), smaller bandwidth, h_modified, results in a higher-variance estimate.
+	The kernel density estimate with a smaller bandwidth is more sensitive to fluctuations in the data, leading to a "peakier" estimate.
+	In same sample size (n), smaller bandwidth, h_modified, results in a lower bias.
+	Smaller bandwidths allow the estimate to be more responsive to local variations in the data, reducing bias. 
+
+3)Rescaled Bias:
+
+	The average rescaled bias with the modified bandwidths is consistently lower than that with the original bandwidths for all sample sizes.
+	The decrease in rescaled bias indicates that the modified bandwidths result in intervals with improved accuracy in estimating the true parameter.
